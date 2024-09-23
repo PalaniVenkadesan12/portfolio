@@ -6,22 +6,67 @@ body {
     color: #2c3e50;
 }
 
+#about {
+    background-image: url('https://wallpaperaccess.com/full/3239480.jpg');
+    background-size: cover;
+    background-position: center;
+    filter: blur(0px); /* Adjust the blur level if needed */
+    position: relative;
+}
+
+.about-content {
+    position: relative;
+    z-index: 1;
+    background-color: rgba(255, 255, 255, 0.8); /* Optional for better text readability */
+    padding: 20px;
+    border-radius: 10px;
+}
+
+#about::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Optional overlay */
+    z-index: 0;
+}
+
+
+/* General Styles */
 header {
     background-color: #2c3e50;
-    color: white;
     padding: 15px 0;
 }
 
-nav ul {
-    list-style: none;
-    padding: 0;
+/* Navigation Styles */
+nav {
     display: flex;
-    justify-content: center;
-    margin: 0;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 100%;
+    padding: 0 20px;
 }
 
-nav ul li {
-    margin: 0 20px;
+.left-nav, .right-nav {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+.left-nav {
+    flex: 1; /* Takes up 50% of the width */
+}
+
+.right-nav {
+    flex: 1; /* Takes up 50% of the width */
+    justify-content: flex-end; /* Aligns items to the right */
+}
+
+.left-nav li, .right-nav li {
+    margin: 0 10px;
 }
 
 nav ul li a {
@@ -34,6 +79,17 @@ nav ul li a {
 nav ul li a:hover {
     color: #18bc9c;
 }
+
+/* To ensure the 'About' stays on the left and other links stay on the right */
+.left-nav {
+    justify-content: flex-start;
+}
+
+.right-nav {
+    justify-content: flex-end;
+}
+
+
 
 section {
     padding: 50px 20px;
